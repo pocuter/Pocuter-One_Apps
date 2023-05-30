@@ -1,0 +1,3 @@
+[submodule "CodeUploader/tools/pocuter-deploy"]
+	path = CodeUploader/tools/pocuter-deploy
+	url = git@github.com:pocuter/pocuter-deploy.git

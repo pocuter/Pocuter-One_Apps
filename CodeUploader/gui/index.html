@@ -1,0 +1,63 @@
+<!--
+  Copyright 2023 Kallistisoft
+  GNU GPL-3 https://www.gnu.org/licenses/gpl-3.0.txt
+-->
+<!DOCTYPE HTML><html>
+	<head>
+		<title>Pocuter Application Upload Server</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="data:,">
+		<!-- include-start -->
+		<link rel="stylesheet" href="style.css"/>
+		<script src="crypto-js.min.js" defer></script>		
+		<script src="index.js" defer></script>
+		<!-- include-stop -->
+	</head>
+	<body>
+		<div id="overlay">			
+			<div id="overlay-content" onclick="popup_close();">
+				<div id="overlay-title">null</div>
+				<div id="overlay-text">null</div>
+				<div class="overlay-button">
+					<div class="overlay-close">OK</div>
+				</div>
+			</div>
+		</div>
+		<header>
+			<h2>Code Upload Server</h2>
+		</header>
+		<div id="controls">
+			<div id="dropzone" loaded="false" dragover="false">
+				<div id="drop_prompt">
+					Drag your application folder here<br/>
+					to automatically upload a packaged</br>
+					Pocuter program image.
+				</div>				
+				<div id="drop_info">
+
+					<div class="label">Name:</div>
+					<div id="app_name"></div>
+					<div class="label">ID:</div>
+					<div id="image_appid"></div>
+
+					<div>&nbsp;</div>
+					<div>&nbsp;</div>
+
+					<div class="label">File:</div>
+					<div id="image_path"></div>
+
+					<div class="label">MD5:</div>
+					<div id="image_md5sum"></div>
+
+					<div class="label">Size:</div>
+					<div id="image_size"></div>
+						
+				</div>
+			</div>
+			<div id="upload">
+				<progress id="progress_bar" max="100" value="0" style="display: none"></progress>
+				<div id="button" enabled="false" onclick="UploadFile()">Click here to upload program image</div>
+			</div>
+		</div>
+	</body>	
+</html>

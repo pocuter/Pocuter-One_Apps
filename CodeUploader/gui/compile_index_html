@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# calc start and stop line numbers of template markers
+_INCLUDE_START=$(grep --line-number -Z '<!-- include-start -->' index.html | awk -F: '{print $1}');
+_INCLUDE_STOP=$(grep --line-number -Z '<!-- include-stop -->' index.html | awk -F: '{print $1}');
+let _INCLUDE_START--;
+let _INCLUDE_STOP++;
+
+# combine the source files and output to ../index_html.h
+exec 1> ../index_html.h
+echo -e 'R"rawliteral('
+head -n $_INCLUDE_START index.html
+
+echo -e '<style>'
+cat style.css
+echo -e '\n</style>\n'
+
+echo -e '<script type="application/javascript">'
+cat index.js
+echo -e '\n</script>\n'
+
+echo -e '<script type="application/javascript">'
+cat crypto-js.min.js
+echo -e '\n</script>\n'
+
+tail -n +$_INCLUDE_STOP index.html
+echo -e '\n)rawliteral"'
