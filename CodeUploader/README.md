@@ -4,7 +4,7 @@
 
 ## Application Features
 - HTML5 Web interface for installing a Pocuter application via Drag & Drop
-- CLI tool [**pocuter-deploy**](./tools/pocuter-deploy/) for building, packaging, and uploading Pocuter applications
+- CLI tool [**pocuter-deploy**](https://github.com/pocuter/pocuter-deploy) for building, packaging, and uploading Pocuter applications
 - Robust error checking of uploaded files - MD5 hash check, backup creation, and temp file used for uploads
 - Automatically launches uploaded application after file verification
 - Can be used in place of the 'Menu Application' for rapid development cycles
@@ -29,9 +29,9 @@ For the best experience use a WebKit based browser: Chrome, Chromium, Safari, or
 ***
 
 ## Command-line Deployment Tool
-In addition to the web app interface there is also a command line tool [pocuter-deploy](./tools/pocuter-deploy/) for deploying pocuter applications to the server. This tool also is capable of compiling and packaging the application before uploading it.
+In addition to the web app interface there is also a command line tool [pocuter-deploy](https://github.com/pocuter/pocuter-deploy) for deploying pocuter applications to the server. This tool also is capable of compiling and packaging the application before uploading it.
 
-[Please see the README.md file for the pocuter-deploy tool for more information...](./tools/pocuter-deploy/)
+[Please see the README.md file for the pocuter-deploy tool for more information...](https://github.com/pocuter/pocuter-deploy)
 
 ***
 
@@ -50,10 +50,10 @@ This will cause the upload server to automatically be re-loaded when you exit yo
 ***
 
 ## Known Bugs and Browser Compatability Issues
-The web app has a (200ms) timout event for processing a dropped folder, if your computer is extremely slow this may result in a message that a program image couldn't be found. If this is the case please use the [pocuter-deploy](./tools/pocuter-deploy/) command line tool.
+The web app has a (200ms) timout event for processing a dropped folder, if your computer is extremely slow this may result in a message that a program image couldn't be found. If this is the case please use the [pocuter-deploy](https://github.com/pocuter/pocuter-deploy) command line tool.
 
 ### Disability and Accessability:
-The web app is not compatible with accessability features as it requires drag and drop to function. If you have accessability needs please use the [pocuter-deploy](./tools/pocuter-deploy/) command line tool.
+The web app is not compatible with accessability features as it requires drag and drop to function. If you have accessability needs please use the [pocuter-deploy](https://github.com/pocuter/pocuter-deploy) command line tool.
 
 ### Browser Compatability Tests:
 The web application has been tested with the folowing browsers:
@@ -89,7 +89,7 @@ This project requires the [***ESPAsyncWebSrv Arduino Library***](https://github.
 ```
 
 ### Self-Hoisting Companion Application:
-There is a companion application ['Code Uploader Hoist Proxy'](/tools/HoistProxy/) that is used to hoist the 'Code Upload Server' when the upload server detects that it is updating itself.
+There is a companion application ['Code Uploader Hoist Proxy'](https://github.com/pocuter/Pocuter-One_Apps/tree/main/CodeUploader/tools/HoistProxy) that is used to hoist the 'Code Upload Server' when the upload server detects that it is updating itself.
 
 ### Web Application Compiler:
 There is a script in the ***./gui/*** folder called ***compile_index_html*** which is used to compile the web application into the C header file ***index_html.h*** - this structure allows the web application to be tested locally with a live-loading server.

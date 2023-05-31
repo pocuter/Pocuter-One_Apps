@@ -16,7 +16,7 @@ Following app IDs are already in use (Main Menu added for reference):
 
 | ID   | Name                | Version |
 | ---: | :------------------ | ------: |
-| 1    | Main Menu           | 0.7.12  |
+| 1    | Main Menu           | 0.8.8   |
 | 2    | Calculator          | 0.2.2   |
 | 3    | Stopwatch           | 0.2.2   |
 | 4    | Score Tracker       | 0.2.2   |
