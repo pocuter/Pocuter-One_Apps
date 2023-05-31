@@ -1,0 +1,282 @@
+/*
+* Copyright 2023 Kallistisoft
+* GNU GPL-3 https://www.gnu.org/licenses/gpl-3.0.txt
+*/
+
+html {
+	font-family: Arial; 
+	display: inline-block; 
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	overflow: hidden;    
+	max-width: 600px; 
+	margin: 0px auto; 
+	padding: 0px auto;
+	padding-bottom: 25px;
+	background-color: #fff;
+	background: linear-gradient(-45deg, #ee7752, #ee6e9f, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: body-gradient 60s ease infinite;
+}
+
+@keyframes body-gradient {
+	0% {
+		background-position: 0% 25%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 25%;
+	}
+}
+
+h2 {
+	color:rgb(51, 51, 51);
+	font-size: 2.5rem;
+	text-align: center;
+	filter: blur(1px);
+	padding: 20px;
+	padding-bottom: 0px;
+	margin: 0px;
+	margin-top: 20px;
+}
+
+#controls {
+	width: 600px;
+	padding: 40px;
+	text-align: center;
+}
+
+/* drop zone */
+/* -------------------------------------------------------------------------------- */
+#dropzone { 
+	width:500px;
+	height:300px;
+
+	
+	border: dashed 5px rgb(200, 200, 200, 0.8);
+	border-radius: 2em;
+	background-color: rgb(252, 252, 252, 0.1);
+
+	box-shadow: inset 0px 1px 0px rgb(156, 156, 156),0px 1px 3px rgba(0,0,0,0.3);
+
+	display: grid;
+	place-items: center;
+	text-align: center;
+	font-weight: 900;
+
+	transition: border-color 1.5s cubic-bezier(0.33, 1, 0.68, 1);
+	transition: border-style 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+	transition: background-color 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#dropzone[loaded="true"],
+#dropzone[dragover="true"],
+#dropzone:hover { 
+	border-color: rgb(178, 178, 200);
+	background-color: rgb(240, 240, 240);
+	cursor: copy;
+}
+
+#dropzone[dragover="false"][loaded="true"] {
+	cursor: default;
+	border-style: solid;
+	background-color: rgb(232, 239, 255);
+	background: linear-gradient(180deg,rgb(232, 239, 255) 0%,rgb(209, 223, 255) 90%);
+	border-color: rgb(175, 193, 253);
+	transition: background-color 2s cubic-bezier(0.33, 1, 0.68, 1);        
+}
+
+/* upload indicator and controls */
+/* -------------------------------------------------------------------------------- */
+#dropzone #drop_prompt {
+	transition: color 1s ease-out;
+	color: rgb(51, 51, 51);
+}
+
+#dropzone[dragover="false"][loaded="true"] #drop_prompt {
+	display: none;
+}
+
+#dropzone:hover #drop_prompt {
+	color: rgb(120, 121, 150);
+}
+
+#drop_info {
+	display: none;
+	margin-left: -20px;
+	color: rgb(222, 222, 238, 0.0);
+	transition: color 1.4s cubic-bezier(0.33, 1, 0.68, 1);
+	text-align: left;
+
+}
+
+#drop_info div.label {
+	text-align: right;
+	padding-right: 20px;
+}
+
+#drop_info div.label,
+#drop_info #app_name,
+#drop_info #image_appid {
+	color: rgb(58, 80, 204);
+}
+
+#dropzone[dragover="false"][loaded="true"] #drop_info {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	color: rgb(95, 110, 199, 1.0);
+}
+
+
+/* upload indicator and controls */
+/* -------------------------------------------------------------------------------- */
+#upload {
+	margin: 30px;    
+	width: 450px;
+	text-align: center;
+}
+
+
+/* upload button */
+/* -------------------------------------------------------------------------------- */
+#button {
+	padding: 10px;   
+	text-align: center;
+	font-weight: 900;
+	color: rgb(168, 167, 167);
+	cursor: pointer;
+
+	backface-visibility: hidden;
+	position: relative;
+	cursor: pointer;
+	white-space: nowrap;
+	background: linear-gradient(180deg,#fea 0%,#dc8 0%,rgb(146, 197, 98) 100%,#dc8 100%);
+	border-radius: 5px;
+	border: 1px solid #ba6;
+	border-width: 1px 1px 1px 1px;
+	padding: 10px 20px 10px 20px;
+	box-shadow: inset 0px 1px 0px rgba(255,255,255,1),0px 1px 3px rgba(0,0,0,0.3);
+	color: rgb(217, 252, 206);
+	font-weight: 900;
+	font-style: normal;
+	text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+
+	transition: filter 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+	transition: color 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#button[enabled="false"] {
+	background: rgb(223, 213, 213);
+	filter: grayscale(95%) opacity(20%);
+	color: rgb(1, 77, 7);
+	cursor: default;
+}
+
+
+/* progres bar */
+/* -------------------------------------------------------------------------------- */
+#progress_bar::-webkit-progress-bar,
+#progress_bar {
+	background-color: #f3f3f3;
+	border-radius: 8px;
+	border: 1px solid rgb(175, 193, 253);
+	border-width: 1px 1px 1px 1px;
+	width: 100%;
+	height: 43px;
+}
+
+#progress_bar::-webkit-progress-value {
+	background-image:
+	-webkit-linear-gradient(-45deg, 
+							transparent 33%, rgba(0, 0, 0, .1) 33%, 
+							rgba(0,0, 0, .1) 66%, transparent 66%),
+	-webkit-linear-gradient(top, 
+							rgba(255, 255, 255, 0.651), 
+							rgba(0, 0, 0, .25)),
+	-webkit-linear-gradient(left, #09c, rgb(71, 68, 255));
+	background-size: 60px 33px, 100% 100%, 100% 100%;
+	border-radius: 5px;
+	height: 33px;
+	margin: 1%;
+	max-width: 98%;
+}
+
+
+/* message overlay */
+/* -------------------------------------------------------------------------------- */
+#overlay {
+	/* Height & width depends on how you want to reveal the overlay (see JS below) */   
+	height: 0;
+	width: 100%;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0, 0.6); /* Black w/opacity */
+	overflow-x: hidden; /* Disable horizontal scroll */   
+
+	opacity: 1;
+	transition: opacity 2s cubic-bezier(0.65, 0, 0.35, 1);
+
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: center;
+	text-align: center;
+}
+ 
+#overlay.fadeout {
+	opacity: 0;
+}
+
+/* Position the content inside the overlay */
+#overlay-content {
+	cursor: pointer;
+	position: relative;
+	top: 150px; /* 25% from the top */
+	width: 400px; /* 100% width */
+	text-align: center; /* Centered text/links */
+
+	margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+	height: 200px;
+
+
+	border-color: rgb(178, 178, 200);
+	background-color: rgb(240, 240, 240);
+	border: solid px rgba(199, 199, 199, 0.8);
+	border-radius: 0.5em;
+
+	display: grid;
+	grid-template-rows: 20% 60% 20%;
+}
+
+#overlay-title {
+	font-weight: 800;
+	background-color: #dfc13d;
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+	color: rgb(250, 250, 250);
+	padding: 0.5em;
+	height: 1em;
+}
+
+#overlay-text {
+	padding: .8em;
+	color: rgb(21, 36, 36);
+}
+
+.overlay-close {
+	font-weight: 800;
+	border-top: 1px solid rgb(204, 204, 204);
+	padding-top: .7em;
+	color: rgb(36, 59, 59);	
+	background: linear-gradient(180deg,rgb(238, 237, 237) 0%,rgb(240, 240, 240) 100%);
+}
+
+#overlay-content:hover .overlay-close {
+	color:rgb(58, 80, 204);
+}

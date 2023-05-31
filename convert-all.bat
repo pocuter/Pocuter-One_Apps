@@ -6,3 +6,4 @@ java -jar PocuterAppConverter.jar -id 5 -version 0.2.4 -meta RandomGenerator\Ran
 java -jar PocuterAppConverter.jar -id 6 -version 0.2.4 -meta PinPlotter\PinPlotter.ini -image PinPlotter\PinPlotter.ino.esp32c3.bin
 java -jar PocuterAppConverter.jar -id 7 -version 0.2.2 -meta Clock\Clock.ini -image Clock\Clock.ino.esp32c3.bin
 java -jar PocuterAppConverter.jar -id 8 -version 0.2.2 -meta Calendar\Calendar.ini -image Calendar\Calendar.ino.esp32c3.bin
+java -jar PocuterAppConverter.jar -id 8080 -version 1.0.0 -meta CodeUploader\CodeUploader.ini -image CodeUploader\CodeUploader.ino.esp32c3.bin

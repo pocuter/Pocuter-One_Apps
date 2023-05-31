@@ -14,13 +14,14 @@ Alternatively, you can add the app to the convert-all.bat file and use that to e
 
 Following app IDs are already in use (Main Menu added for reference):
 
-| ID | Name                | Version |
-| -: | :------------------ | ------: |
-| 1  | Main Menu           | 0.7.12  |
-| 2  | Calculator          | 0.2.2   |
-| 3  | Stopwatch           | 0.2.2   |
-| 4  | Score Tracker       | 0.2.2   |
-| 5  | Random Generator    | 0.2.4   |
-| 6  | Pin Plotter         | 0.2.4   |
-| 7  | Clock               | 0.2.2   |
-| 8  | Calendar            | 0.2.2   |
+| ID   | Name                | Version |
+| ---: | :------------------ | ------: |
+| 1    | Main Menu           | 0.7.12  |
+| 2    | Calculator          | 0.2.2   |
+| 3    | Stopwatch           | 0.2.2   |
+| 4    | Score Tracker       | 0.2.2   |
+| 5    | Random Generator    | 0.2.4   |
+| 6    | Pin Plotter         | 0.2.4   |
+| 7    | Clock               | 0.2.2   |
+| 8    | Calendar            | 0.2.2   |
+| 8080 | Code Uploader       | 1.0.0   |
