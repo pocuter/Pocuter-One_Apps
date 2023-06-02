@@ -12,7 +12,7 @@ Alternatively, you can add the app to the convert-all.bat file and use that to e
 
 ## App IDs and Data
 
-Following app IDs are already in use (Main Menu added for reference):
+Following app IDs are already in use:
 
 | ID   | Name                | Version |
 | ---: | :------------------ | ------: |
