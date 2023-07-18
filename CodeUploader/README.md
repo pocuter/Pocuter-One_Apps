@@ -1,4 +1,4 @@
-# PocuterUtil :: Code Uploader -- Pocuter Application Upload Server
+# Code Uploader -- Pocuter Application Upload Server
 **This application exposes a convenient web interface for installing applications onto a Pocuter**
 
 
